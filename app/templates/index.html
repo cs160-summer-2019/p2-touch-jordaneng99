@@ -85,6 +85,48 @@
 	</div>
 	<script>
 	  // your solution here
+$( document ).ready(function() {
+  var rotateBox = document.getElementById('rotate-box');
+  var mcRot = new Hammer(rotateBox);
+  var rotate = new Hammer.Rotate();
+  mcRot.add(rotate);
+  mcRot.on("rotate", function(ev) {
+    $('#rotate-box').css("background", "red");
+  });
+
+  var pinchBox = document.getElementById('pinch-box');
+  var mcPin = new Hammer(pinchBox);
+  var pinchGesture = new Hammer.Pinch();
+  mcPin.add(pinchGesture);
+  mcPin.on("pinch", function(ev) {
+    $('#pinch-box').css("background", "orange");
+  });
+
+  var pressBox = document.getElementById('press-box');
+  var mcPin = new Hammer(pressBox);
+  mcPin.on("press", function(ev) {
+    $('#press-box').css("background", "yellow");
+  });
+
+  var panBox = document.getElementById('pan-box');
+  var mcPan = new Hammer(panBox);
+  mcPan.on("pan", function(ev) {
+    $('#pan-box').css("background", "green");
+  });
+
+  var tapBox = document.getElementById('tap-box');
+  var mcTap = new Hammer(tapBox);
+  mcTap.on("tap", function(ev) {
+    $('#tap-box').css("background", "blue");
+  });
+
+  var swipeBox = document.getElementById('swipe-box');
+  var mcSwi = new Hammer(swipeBox);
+  mcSwi.on("swipe", function(ev) {
+    $('#swipe-box').css("background", "purple");
+  });
+
+});
   </script>
 </body>
 </html>
